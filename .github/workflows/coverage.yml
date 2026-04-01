@@ -136,8 +136,10 @@ jobs:
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-renv@v2
+        env:
+          RENV_CONFIG_INSTALL_JOBS: 1
         with:
-          cache-version: 4
+          cache-version: 5
 
       - name: Install jaspTools if missing from lockfile
         run: |
